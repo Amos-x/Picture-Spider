@@ -16,10 +16,21 @@ NEWSPIDER_MODULE = 'picture_spider.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'picture_spider (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
+
+# 图片保存地址
+IMAGES_STORE = '/Users/Amos/Pictures/Blog'
+IMAGES_EXPIRES = 30
+IMAGES_THUMBS = {
+    'mid': (740, 317.141),
+}
+
+
+LOG_LEVEL = 'INFO'
+
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -64,9 +75,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'picture_spider.pipelines.PictureSpiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'picture_spider.pipelines.PictureSpiderPipeline': 200,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
